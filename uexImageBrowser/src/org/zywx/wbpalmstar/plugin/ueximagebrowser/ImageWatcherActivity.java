@@ -12,6 +12,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -89,6 +90,30 @@ public class ImageWatcherActivity extends Activity implements OnClickListener,
 		strCancel = finder.getString("cancel");
 		strConfirm = finder.getString("confirm");
 		strPrompt = finder.getString("prompt");
+		startTimerTask();
+		
+	}
+	
+    private Handler handler = new Handler();  
+    private static boolean isPending = false;
+    private Runnable task = new Runnable() {  
+        public void run() {                 
+                isPending = false;
+                try {
+                	progressBar.setVisibility(View.GONE);
+                } catch (Exception e) {                        
+                    e.printStackTrace();
+                }            
+        }  
+    };  
+    
+	
+	public void startTimerTask() {
+		if (isPending == false) {
+			isPending = true;
+			handler.postDelayed(task, 30000);
+		}
+		
 	}
 
 	@Override
