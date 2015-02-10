@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
     <plugin
-        uexName="uexImageBrowser" version="3.0.11" build="11">
-                   <info>11:修改多选图片回调参数。</info>
+        uexName="uexImageBrowser" version="3.0.12" build="12">
+                   <info>12:修复图片浏览器一直加载的问题。</info>
+				   <build>11:修改多选图片回调参数。</build>
                    <build>10:修复网络图片默认显示缩略图的问题。</build>
                    <build>9:删除多选图片完成时的Toast提示消息。</build>
                    <build>8:修复单张网络图片浏览大图有时会崩溃的问题。</build>
